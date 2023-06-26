@@ -27,3 +27,9 @@ module "buckets" {
   environment = var.environment
 }
 
+module "lambdas" {
+  source = "./lambdas"
+  account_id = var.account_id
+  region = var.region
+  environment = var.environment
+}
