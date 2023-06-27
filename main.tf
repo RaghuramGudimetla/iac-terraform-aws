@@ -20,6 +20,7 @@ terraform {
   }
 }
 
+# All are independent modules for now :)
 module "buckets" {
   source = "./buckets"
   account_id = var.account_id
@@ -29,6 +30,13 @@ module "buckets" {
 
 module "lambdas" {
   source = "./lambdas"
+  account_id = var.account_id
+  region = var.region
+  environment = var.environment
+}
+
+module "instances" {
+  source = "./instances"
   account_id = var.account_id
   region = var.region
   environment = var.environment
