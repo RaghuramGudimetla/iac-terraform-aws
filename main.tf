@@ -41,3 +41,10 @@ module "instances" {
   region = var.region
   environment = var.environment
 }
+
+module "snowflake" {
+  source = "./snowflake"
+  account_id = var.account_id
+  region = var.region
+  environment = var.environment
+}
