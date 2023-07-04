@@ -8,7 +8,6 @@ from datetime import datetime
 import pytz
 import logging
 
-logging.getLogger("snowflake.connector.network").disabled = True
 logging.getLogger().setLevel(logging.INFO)
 
 def read_response_json_data(url: str) -> dict:

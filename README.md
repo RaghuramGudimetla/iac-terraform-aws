@@ -11,3 +11,4 @@ use command aws configure and provide below four values
 
 ## 2023-07-04
 1. Destroyed instances
+2. Deploy lambda function for snowflake external functions
