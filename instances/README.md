@@ -3,6 +3,9 @@
 Use instancekey to ssh to the machine
 Make sure the inbound is set to public
 
+# SSH into the instance
+ssh -i instancekey.pem ec2-user@ec2-XX-XXX-XX-XX.ap-southeast-2.compute.amazonaws.com
+
 # Reference Links:
 https://www.cyberciti.biz/faq/how-to-install-docker-on-amazon-linux-2/
 https://medium.com/@viveknavadia/how-to-create-docker-images-and-deploy-it-using-ecr-ecs-943e8bfc6c94

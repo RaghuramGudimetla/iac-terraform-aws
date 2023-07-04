@@ -7,3 +7,7 @@ use command aws configure and provide below four values
 2. Secret Access Key
 3. Default region name
 4. Default output format
+
+
+## 2023-07-04
+1. Destroyed instances
