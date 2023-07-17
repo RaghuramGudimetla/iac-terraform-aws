@@ -60,10 +60,5 @@ resource "aws_ecs_service" "prefect_agent_service" {
   desired_count = 1
   launch_type   = "FARGATE"
 
-  network_configuration {
-    security_groups  = [aws_security_group.prefect_security_group.id]
-    assign_public_ip = true
-    subnets          = [aws_subnet.prefect_subnet.id]
-  }
   task_definition = aws_ecs_task_definition.prefect_agent_task_definition.arn
 }
