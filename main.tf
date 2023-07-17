@@ -54,4 +54,8 @@ module "prefect" {
   account_id = var.account_id
   region = var.region
   environment = var.environment
+  prefect_agent_queue_name = var.prefect_agent_queue_name
+  prefect_api_key = var.prefect_api_key
+  prefect_api_url = var.prefect_api_url
+  prefect_image = var.prefect_image
 }
