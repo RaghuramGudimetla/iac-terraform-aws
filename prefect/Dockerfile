@@ -1,0 +1,2 @@
+FROM prefecthq/prefect:2-python3.10
+RUN pip install s3fs prefect-aws awswrangler
