@@ -8,3 +8,12 @@ resource "aws_s3_bucket" "data_extraction" {
     Environment = "${var.environment}"
   }
 }
+
+resource "aws_s3_bucket" "prefect" {
+  bucket = "${var.region}-${var.account_id}-prefect"
+
+  tags = {
+    Name        = "Prefect flows bucket"
+    Environment = "${var.environment}"
+  }
+}

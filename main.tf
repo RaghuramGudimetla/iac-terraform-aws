@@ -48,3 +48,11 @@ module "snowflake" {
   region = var.region
   environment = var.environment
 }
+
+module "prefect" {
+  source = "./prefect"
+  account_id = var.account_id
+  region = var.region
+  environment = var.environment
+  depends_on = [ module.buckets ]
+}
