@@ -70,6 +70,11 @@ resource "aws_iam_role_policy_attachment" "prefect_ecs_execution_policy_attachme
   policy_arn = aws_iam_policy.prefect_execution_policy.arn
 }
 
+resource "aws_iam_role_policy_attachment" "prefect_ecr_policy_attachment" {
+  role       = aws_iam_role.prefect_execution_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess"
+}
+
 # Task role
 
 resource "aws_iam_role" "prefect_task_role" {
