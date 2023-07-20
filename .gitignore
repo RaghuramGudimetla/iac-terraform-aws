@@ -40,3 +40,4 @@ terraform.rc
 .data/**
 
 .local_variables.sh
+agent_key.pem
