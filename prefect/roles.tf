@@ -10,7 +10,8 @@ resource "aws_iam_role" "prefect_execution_role" {
           "Service" : [
             "ecs-tasks.amazonaws.com",
             "ec2.amazonaws.com",
-            "ecs.amazonaws.com"
+            "ecs.amazonaws.com",
+            "ecr.amazonaws.com"
           ]
         },
         "Action" : "sts:AssumeRole"
@@ -88,7 +89,8 @@ resource "aws_iam_role" "prefect_task_role" {
           "Service" : [
             "ecs-tasks.amazonaws.com",
             "ec2.amazonaws.com",
-            "ecs.amazonaws.com"
+            "ecs.amazonaws.com",
+            "ecr.amazonaws.com"
           ]
         },
         "Action" : "sts:AssumeRole"
@@ -143,4 +145,9 @@ resource "aws_iam_policy" "prefect_task_policy" {
 resource "aws_iam_role_policy_attachment" "prefect_ecs_task_policy_attachment" {
   role       = aws_iam_role.prefect_task_role.name
   policy_arn = aws_iam_policy.prefect_task_policy.arn
+}
+
+resource "aws_iam_role_policy_attachment" "prefect_ecr_task_policy_attachment" {
+  role       = aws_iam_role.prefect_task_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryFullAccess"
 }
