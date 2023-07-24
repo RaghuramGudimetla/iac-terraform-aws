@@ -33,14 +33,15 @@ resource "aws_iam_policy" "prefect_execution_policy" {
       {
         Action = [
           "s3:GetObject",
+          "s3:GetObjectAcl",
           "s3:ListBucket",
           "s3:ListAllMyBuckets",
           "s3:PutObject"
         ]
         Effect = "Allow"
         Resource = [
-          "arn:aws:s3:::ap-southeast-2-886192468297-prefect/flows",
-          "arn:aws:s3:::ap-southeast-2-886192468297-prefect/flows/*"
+          "arn:aws:s3:::ap-southeast-2-886192468297-prefect/flowconfigs",
+          "arn:aws:s3:::ap-southeast-2-886192468297-prefect/flowconfigs/*"
         ]
       },
       {
@@ -107,14 +108,15 @@ resource "aws_iam_policy" "prefect_task_policy" {
       {
         Action = [
           "s3:GetObject",
+          "s3:GetObjectAcl",
           "s3:ListBucket",
           "s3:ListAllMyBuckets",
           "s3:PutObject"
         ]
         Effect = "Allow"
         Resource = [
-          "arn:aws:s3:::ap-southeast-2-886192468297-prefect/flows",
-          "arn:aws:s3:::ap-southeast-2-886192468297-prefect/flows/*"
+          "arn:aws:s3:::ap-southeast-2-886192468297-prefect/flowconfigs",
+          "arn:aws:s3:::ap-southeast-2-886192468297-prefect/flowconfigs/*"
         ]
       },
       {
