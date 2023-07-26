@@ -10,19 +10,6 @@ resource "aws_iam_policy" "prefect_user_policy" {
     Statement = [
       {
         Action = [
-          "s3:GetObject",
-          "s3:ListBucket",
-          "s3:ListAllMyBuckets",
-          "s3:PutObject"
-        ]
-        Effect = "Allow"
-        Resource = [
-          "arn:aws:s3:::ap-southeast-2-886192468297-prefect/flowconfigs/",
-          "arn:aws:s3:::ap-southeast-2-886192468297-prefect/flowconfigs/*"
-        ]
-      },
-      {
-        Action = [
           "ec2:DescribeSubnets",
           "ec2:DescribeVpcs",
           "ecr:BatchCheckLayerAvailability",
