@@ -14,7 +14,9 @@ resource "aws_iam_policy" "snowflake_read" {
           "s3:GetObject",
           "s3:GetObjectVersion",
           "s3:ListBucket",
-          "s3:GetBucketLocation"
+          "s3:GetBucketLocation",
+          "s3:PutObject",
+          "s3:DeleteObject",
         ],
         "Resource" : [
           "arn:aws:s3:::ap-southeast-2-886192468297-data-extraction/*",

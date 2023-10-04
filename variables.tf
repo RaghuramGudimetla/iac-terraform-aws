@@ -9,28 +9,30 @@ variable "region" {
 }
 
 variable "environment" {
-    type = string
-    default = "test"
+  type    = string
+  default = "test"
 }
 
 variable "prefect_image" {
-  type    = string
+  type        = string
   description = "Docker image for the service"
-  default = "prefecthq/prefect:2-python3.11"
+  default     = "prefecthq/prefect:2-python3.11"
 }
 
 variable "prefect_agent_queue_name" {
-  type    = string
+  type        = string
   description = "Prefect agent queue name"
-  default = "prefect_agent_queue"
+  default     = "prefect_agent_queue"
 }
 
 variable "prefect_api_url" {
-  type    = string
+  type        = string
   description = "Prefect remote API URL"
+  default     = ""
 }
 
 variable "prefect_api_key" {
-  type    = string
+  type        = string
   description = "Prefect remote API key"
+  default     = ""
 }
