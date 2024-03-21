@@ -17,3 +17,12 @@ resource "aws_s3_bucket" "prefect" {
     Environment = "${var.environment}"
   }
 }
+
+resource "aws_s3_bucket" "covid" {
+  bucket = "${var.region}-${var.account_id}-covid"
+
+  tags = {
+    Name        = "Covid19"
+    Environment = "${var.environment}"
+  }
+}
