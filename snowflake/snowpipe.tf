@@ -19,8 +19,10 @@ resource "aws_iam_policy" "snowflake_read" {
           "s3:DeleteObject",
         ],
         "Resource" : [
-          "arn:aws:s3:::ap-southeast-2-886192468297-data-extraction/*",
-          "arn:aws:s3:::ap-southeast-2-886192468297-data-extraction"
+          "arn:aws:s3:::${var.region}-${var.account_id}-data-extraction/*",
+          "arn:aws:s3:::${var.region}-${var.account_id}-data-extraction",
+          "arn:aws:s3:::${var.region}-${var.account_id}-covid/*",
+          "arn:aws:s3:::${var.region}-${var.account_id}-covid"
         ]
       }
     ]
